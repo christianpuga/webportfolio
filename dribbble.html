@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script type="text/javascript" src="js/dribbble.js"></script>
+</head>
+<body>
+   </body>
+    
+     <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+     </ul>
+        
+
+<div class="profile"></div>
+<div class="shots"></div>
+<div id="dribbble"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jribbble/dist/jribbble.min.js"></script>
+  
+<script type='text/javascript'>
+$(function() {
+  $.getJSON('https://api.dribbble.com/v1/users/christianpuga/shots?access_token=3d9ec61aff5df82f32c07d131cc67a1c6e2305eb82dd5e6564c3882bd433d0b5&callback=?', function(resp) {
+    if (resp.data.length > 0) {							
+      $.each(resp.data.reverse(), function(i, val) {
+        $('#dribbble').prepend(
+          '<li class="box"><img src="'+val.images.normal+'" /><h2>'+val.title+'</h2><p><a href="'+val.html_url+'">original post</a></p></li>'
+        );
+      });
+    }
+    else {
+      $('#dribbble').append('<li>No shots.</li>');
+    }
+  });		   							    
+});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+/*PRUEBA DE CSS*/
+div#dribbble {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* margin: 5px 10px; */
+}
+li.box {
+    width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+li.box h2 {
+    opacity: 0.6;
+    font-size: 1em;
+}
+
+li.box p {
+    opacity: 0.7;
+    font-size: 12px;
+}
+
+li.box img {
+    width: 300px;
+    box-shadow: 0 4px 7px rgba(0,0,0,0.09);
+}
