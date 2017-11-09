@@ -127,6 +127,19 @@ body {
     text-decoration: none;
 }
 
+.container li a:hover {
+    opacity: 0.3;
+}
+
+.container li a {
+    color: gray;
+    text-decoration: none;
+}
+
+.container li a:visited {
+    color: lightgray;
+}
+
 .container li a:visited {
     color: lightgray;
 }
