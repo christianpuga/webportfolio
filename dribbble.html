@@ -15,7 +15,7 @@
       <li><a href="portfolio.html">Portfolio</a></li>
      </ul>
     </div>
-        
+
 
 <div class="profile"></div>
 <div class="shots"></div>
@@ -28,17 +28,17 @@
 <script type='text/javascript'>
 $(function() {
   $.getJSON('https://api.dribbble.com/v1/users/christianpuga/shots?access_token=3d9ec61aff5df82f32c07d131cc67a1c6e2305eb82dd5e6564c3882bd433d0b5&callback=?', function(resp) {
-    if (resp.data.length > 0) {							
+    if (resp.data.length > 0) {
       $.each(resp.data.reverse(), function(i, val) {
         $('#dribbble').prepend(
-          '<li class="box"><img src="'+val.images.normal+'" /><h2>'+val.title+'</h2><p><a href="'+val.html_url+'">original post</a></p></li>'
+          '<li class="box"><a target="_blank" href="'+val.html_url+'"><img src="'+val.images.normal+'" /></a><h2>'+val.title+'</h2></li>'
         );
       });
     }
     else {
       $('#dribbble').append('<li>No shots.</li>');
     }
-  });		   							    
+  });
 });
 </script>
 
